@@ -20,6 +20,7 @@ public class Ball{
         this.speedY = (int)(Math.random()*5)+1;
         this.size = (int)(Math.random()*15)+5;
         this.color = new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+
     }
     public Ball(int x, int y, int size, int speedX, int speedY)
     {
@@ -99,6 +100,8 @@ public class Ball{
         cow.setColor(color);
         cow.fillOval(x,y,size,size);
     }
+
+
     public int getX()
     {
         return x;
@@ -111,7 +114,6 @@ public class Ball{
     {
         return size;
     }
-
 
 
 

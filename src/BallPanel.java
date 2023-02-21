@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 public class BallPanel extends JPanel{
     private Color theColor;
     ArrayList<Ball> ballArray = new ArrayList<Ball>();
@@ -12,6 +13,8 @@ public class BallPanel extends JPanel{
     int y = 20;
     int speedX = 3;
     int speedY = 3;
+    int mouseX;
+    int mouseY;
 
     Ball oneBall;
 
@@ -34,8 +37,46 @@ public class BallPanel extends JPanel{
         {
             ballArray.add(new Ball());
         }
+
         oneBall = new Ball(20,20,20,5,5);
         this.setFocusable(true);
+        addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                mouseX = e.getX();
+                mouseY = e.getY();
+                for (Ball i : ballArray)
+                {
+                    if(mouseX<=i.getX()+i.getSize() && mouseX>=i.getX() && mouseY>=i.getY() && mouseY<=i.getY()+i.getSize())
+                    {
+                        ballArray.remove(i);
+                    }
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+
         this.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
