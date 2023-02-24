@@ -16,8 +16,8 @@ public class Ball{
     {
         this.x = (int)(Math.random()*400)+15;
         this.y = (int)(Math.random()*400)+15;
-        this.speedX = (int)(Math.random()*5)+1;
-        this.speedY = (int)(Math.random()*5)+1;
+        this.speedX = (int)(Math.random()*2)+1;
+        this.speedY = (int)(Math.random()*2)+1;
         this.size = (int)(Math.random()*15)+5;
         this.color = new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 

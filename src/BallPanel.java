@@ -44,6 +44,11 @@ public class BallPanel extends JPanel{
 
             @Override
             public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
                 mouseX = e.getX();
                 mouseY = e.getY();
                 for (Ball i : ballArray)
@@ -53,11 +58,6 @@ public class BallPanel extends JPanel{
                         ballArray.remove(i);
                     }
                 }
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
